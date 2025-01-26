@@ -14,3 +14,22 @@ body {
     display: none; /* Chrome, Safari, and Opera */
   }
   
+  /* Inside your custom CSS file (e.g., styles.css) */
+@layer components {
+  .swiper-pagination {
+    position: relative !important;
+    bottom: -40px;  /* Adjust the value to control distance from the cards */
+    left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+  }
+
+  /* Optional: Customize the appearance of the dots */
+  .swiper-pagination-bullet {
+    background-color: greenyellow; /* Change color of the dots */
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #3490dc; /* Active dot color */
+  }
+}

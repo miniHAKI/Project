@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black  mt-40 text-white py-10">
-      <div className=" w-full mx-auto px-20 grid grid-cols-1 md:grid-cols-5 gap-6">
+    <footer className="bg-black mt-20 py-10 w-full overflow-hidden">
+      <div className="w-full mx-auto px-4 md:px-20 grid grid-cols sm:grid-cols-2 md:grid-cols-5 gap-6">
         {/* Exclusive Section */}
         <div>
           <h3 className="font-bold text-lg mb-4">Exclusive</h3>

@@ -3,10 +3,10 @@ import cover from "../assets/cover.avif";
 
 const Signup = () => {
   return (
-    <div className="w-full text-white">
+    <div className="w-full">
       <div className="w-full pt-16 flex justify-between">
         <div className="cover w-[60%]">
-          <img src={cover} width={800} alt="" />
+          <img className="" src={cover} width={800} alt="" />
         </div>
         <div className="signup w-[40%] flex flex-col items-start justify-center">
           <h2 className="">Create an account</h2>

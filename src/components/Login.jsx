@@ -3,7 +3,7 @@ import cover from "../assets/cover.avif";
 
 const Signup = () => {
   return (
-    <div className="w-full text-white">
+    <div className="w-full">
       <div className="w-full pt-16 flex justify-between">
         <div className="cover w-[60%]">
           <img src={cover} width={800} alt="" />
@@ -13,14 +13,14 @@ const Signup = () => {
           <h4 className="pt-4">Enter your details below</h4>
           <div className="flex flex-col mt-10 gap-10">
             <input
-              className="w-96 bg-transparent border-b-2 border-gray-500"
+              className="w-96 bg-transparent border-b-2 outline-none border-gray-500"
               type="email"
               placeholder="Email"
               name=""
               id=""
             />
             <input
-              className="w-96 bg-transparent border-b-2 border-gray-500"
+              className="w-96 bg-transparent border-b-2 outline-none border-gray-500"
               type="password"
               placeholder="Password"
               name=""
