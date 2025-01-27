@@ -2,8 +2,10 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [IsLogin, setIsLogin] = useState(true)
   return (
     <>
       <div className="flex justify-between items-center px-4 md:px-20 py-4 w-full overflow-hidden">
@@ -20,6 +22,8 @@ const Navbar = () => {
                 {item}
               </li>
             ))}
+              {/* if is login is true the show login in nav */}
+              {IsLogin ?<li className="cursor-pointer text-lg hover:text-gray-500 hover:underline">signed in</li>: <li className="cursor-pointer text-lg hover:text-gray-500 hover:underline">Signup</li>}
           </ul>
         </div>
 
