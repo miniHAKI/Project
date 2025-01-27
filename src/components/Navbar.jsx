@@ -31,7 +31,6 @@ const Navbar = () => {
             {IsLogin ? <li className="cursor-pointer text-lg hover:text-gray-500 hover:underline">Wel Come User</li> : <li className="cursor-pointer text-lg hover:text-gray-500 hover:underline"><Link to={"/signup"}> Signup</Link></li>}
           </ul>
         </div>
-
         <div className="right-section flex items-center gap-4">
           <div className="hidden md:flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded-md">
             <input
