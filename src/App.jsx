@@ -16,8 +16,8 @@ const App = () => {
   const [IsLogin, setIsLogin] = useState(true);
   return (
     <div className="w-full h-full text-black bg--700">
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home />} />
