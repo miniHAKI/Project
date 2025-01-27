@@ -6,7 +6,7 @@ import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { LuWalletCards } from "react-icons/lu";
 import { RxCrossCircled } from "react-icons/rx";
-import { Link, Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [IsLogin, setIsLogin] = useState(false)
