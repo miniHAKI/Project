@@ -2,8 +2,9 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+
 const Navbar = () => {
+  const [IsLogin, setIsLogin] = useState(true)
   return (
     <>
       <div className="flex justify-between items-center px-4 md:px-20 py-4 w-full overflow-hidden">
@@ -12,9 +13,14 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex">
           <ul className="flex gap-8">
-          <Link to={"/error"} className="cursor-pointer text-lg hover:text-gray-500 hover:underline">Home</Link>
-          <Link to={"/about"} className="cursor-pointer text-lg hover:text-gray-500 hover:underline">About</Link>
-          <Link to={"/contact"} className="cursor-pointer text-lg hover:text-gray-500 hover:underline">Contact</Link>
+            {["Home", "About", "Contact"].map((item, index) => (
+              <li
+                key={index}
+                className="cursor-pointer text-lg hover:text-gray-500 hover:underline"
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 

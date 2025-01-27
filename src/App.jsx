@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import BillingDetails from "./components/BillingDetails";
 import Cart from "./components/Cart";
 import ProductDetailPage from "./components/ProductDetailPage";
+import Home from "./home";
 
 const App = () => {
   const [IsLogin, setIsLogin] = useState(true);
@@ -19,6 +20,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/error" element={<ErrorPage />} />
