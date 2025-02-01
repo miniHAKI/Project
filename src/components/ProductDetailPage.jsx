@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 const ProductDetailPage = () => {
   const [quantity, setQuantity] = useState(1);
+  const [mainImage, setMainImage] = useState(
+    "https://imgs.search.brave.com/VVvfwWzSAab6tETlJXApRc2PWDx5AnBWjWTNRIzgq4E/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvZ2Ft/ZS1jb250cm9sbGVy/LWJ1dHRvbi1mdW5j/dGlvbnMtZGlhZ3Jh/bS1oMjBuN2Z3YWo2/OXh5cmFxLTIucG5n"
+  );
 
   const handleQuantityChange = (type) => {
     if (type === "decrease" && quantity > 1) {
@@ -11,25 +14,29 @@ const ProductDetailPage = () => {
     }
   };
 
+  const thumbnailImages = [
+    "https://imgs.search.brave.com/W6IgaNb5PSSo1xDbwAnh171eWrWwwt_vTjaqF_mtHi4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvYmxh/Y2stcGxheS1zdGF0/aW9uLWNvbnRyb2xs/ZXJ3aXRoLWJsdWUt/bGlnaHRiYXItdjIx/NjIyejhjYjZyaGhq/bi0yLnBuZw",
+    "https://imgs.search.brave.com/mH6TMyACvHVKNvRYaUu4MLm9IA8gQu-laStDeCamssE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvNS9HYW1l/LUNvbnRyb2xsZXIt/UE5HLnBuZw",
+    "https://imgs.search.brave.com/a738uI7PaykrbkZboCqGRXNLI6gYLG3Ta-T1mLS_U38/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvZ2FtZXBhZC9z/bWFsbC9nYW1lcGFk/X1BORzg3LnBuZw",
+    "https://imgs.search.brave.com/tmv9_rMbLld2HYbFLA_ulmoAI-Mt3L29x_kcyOnFAZQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvZ2FtZXBhZC9z/bWFsbC9nYW1lcGFk/X1BORzg5LnBuZw",
+  ];
+
   return (
     <div className="w-full px-4 md:px-20 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Product Images Section */}
         <div>
           <div className="mb-4">
-            <img
-              src="https://via.placeholder.com/300"
-              alt="Product"
-              className="w-full rounded-lg"
-            />
+            <img src={mainImage} alt="Product" className="w-full rounded-lg" />
           </div>
           <div className="grid grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((img, index) => (
+            {thumbnailImages.map((img, index) => (
               <img
                 key={index}
-                src={`https://via.placeholder.com/80?text=${img}`}
-                alt={`Thumbnail ${img}`}
+                src={img}
+                alt={`Thumbnail ${index + 1}`}
                 className="cursor-pointer border border-gray-300 rounded-lg"
+                onClick={() => setMainImage(img)}
               />
             ))}
           </div>
@@ -58,17 +65,14 @@ const ProductDetailPage = () => {
           <div className="mb-4">
             <h3 className="font-semibold mb-2">Colours:</h3>
             <div className="flex items-center gap-4">
-              {[
-                "bg-gray-200",
-                "bg-blue-500",
-                "bg-red-500",
-                "bg-green-500",
-              ].map((color, index) => (
-                <div
-                  key={index}
-                  className={`w-6 h-6 rounded-full cursor-pointer border ${color}`}
-                ></div>
-              ))}
+              {["bg-gray-200", "bg-blue-500", "bg-red-500", "bg-green-500"].map(
+                (color, index) => (
+                  <div
+                    key={index}
+                    className={`w-6 h-6 rounded-full cursor-pointer border ${color}`}
+                  ></div>
+                )
+              )}
             </div>
           </div>
 
